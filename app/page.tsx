@@ -69,7 +69,7 @@ export default function Home() {
         {/* Cinta de materiales */}
         <div className="cinta" aria-hidden="true">
           <div className="cinta__pista">
-            {[0, 1].flatMap((k) => cinta.map((c) => <span key={`${k}${c}`}>{c}</span>))}
+            {[0, 1].flatMap((k) => cinta.map((c) => <span key={`${k}${c}`} className={k ? "dup" : undefined}>{c}</span>))}
           </div>
         </div>
         <h2 className="sr-only">Materiales: {cinta.join(", ")}</h2>

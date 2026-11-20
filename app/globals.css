@@ -318,7 +318,11 @@ p { margin: 0; }
   .dibuja path, .dibuja rect, .dibuja line, .dibuja circle, .dibuja polyline { stroke-dashoffset: 0 !important; }
   .dibuja text { opacity: 1 !important; }
   .barra--sup, .barra--inf { height: var(--barra) !important; }
-  .cinta__pista { flex-wrap: wrap; width: auto; }
+  /* Con «reducir movimiento» (iPhone/Mac): una sola fila que se desliza con el dedo, sin duplicados ni lista envuelta */
+  .cinta { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .cinta::-webkit-scrollbar { display: none; }
+  .cinta__pista { width: max-content; }
+  .cinta .dup { display: none; }
   .pasos article::before { width: 100% !important; }
 }
 
