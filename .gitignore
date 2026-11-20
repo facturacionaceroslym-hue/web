@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+# Fuentes con licencia: NO se versionan ni se entregan. El cliente compra la licencia web y las coloca aquí.
+public/fonts/*
+!public/fonts/LEEME.txt
+
+# Originales de trabajo (PNG sueltos); el sitio usa los JPG con nombre de hueco
+public/img/*.png

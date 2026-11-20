@@ -1,0 +1,6 @@
+FUENTES (licencia obligatoria antes de publicar)
+- Cocogoose Pro (Zetafonts): la versión Trial/CC BY-NC es solo NO comercial. Comprar licencia comercial/web en https://www.zetafonts.com/collection/308
+- Coolvetica (Typodermic): la licencia de escritorio NO cubre sitios web. Comprar licencia web en el sitio de Typodermic.
+Archivos esperados (woff2 de la licencia web): cocogoose-pro-regular.woff2 y coolvetica-regular.woff2
+(En desarrollo local pueden ser .ttf/.otf con el mismo nombre base; ver app/globals.css.)
+No subir estos archivos a git ni entregarlos fuera de la licencia.
