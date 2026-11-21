@@ -7,4 +7,4 @@ next-env.d.ts
 # Antes de publicar: el cliente compra la licencia web y se sustituyen por los woff2 con licencia.
 
 # Originales de trabajo (PNG sueltos); el sitio usa los JPG con nombre de hueco
-public/img/*.png
+public/img/_originales/

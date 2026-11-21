@@ -318,11 +318,8 @@ p { margin: 0; }
   .dibuja path, .dibuja rect, .dibuja line, .dibuja circle, .dibuja polyline { stroke-dashoffset: 0 !important; }
   .dibuja text { opacity: 1 !important; }
   .barra--sup, .barra--inf { height: var(--barra) !important; }
-  /* Con «reducir movimiento» (iPhone/Mac): una sola fila que se desliza con el dedo, sin duplicados ni lista envuelta */
-  .cinta { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-  .cinta::-webkit-scrollbar { display: none; }
-  .cinta__pista { width: max-content; }
-  .cinta .dup { display: none; }
+  /* La cinta es decorativa y de baja velocidad: sigue corriendo (más lenta) para que se vea igual en todos los dispositivos. Se pausa al tocar o pasar el cursor. */
+  .cinta__pista { animation: cinta 110s linear infinite !important; }
   .pasos article::before { width: 100% !important; }
 }
 

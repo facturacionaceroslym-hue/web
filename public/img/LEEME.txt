@@ -1,0 +1,8 @@
+Carpetas de imagenes del sitio
+  logo/      logo-horizontal.svg y logo-negativo.svg (SVG con texto convertido a trazos)
+  fotos/     una foto por hueco: portada-fachada, lamina-galvanizada, lamina-techo, ptr-tubular,
+             transformacion-1/2/3, entrega, nosotros  (.jpg/.webp/.png, mismo nombre = el sitio la toma sola)
+  catalogo/  PROVISIONALES bajadas de aceroslym.com (triangulo verde, ~700 px). Reemplazar por fotos propias; el release-check bloquea publicar si quedan.
+  social/    og.jpg (1200x630) al compartir el link
+  _originales/  PNG de trabajo; NO se versiona
+Los iconos de pestana van en app/ (icon.png 512x512, apple-icon.png 180x180).

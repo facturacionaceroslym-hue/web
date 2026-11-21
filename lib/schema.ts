@@ -18,6 +18,7 @@ export function jsonLd() {
         description: "Venta de lámina galvanizada, lámina para techo, PTR, tubular, montén y ferretería. Corte plasma CNC, corte y doblez y acanalado a medida.",
         foundingDate: String(negocio.desde),
         address: { "@type": "PostalAddress", streetAddress: `${negocio.direccion.calle}, ${negocio.direccion.colonia}`, postalCode: negocio.direccion.cp, addressLocality: negocio.direccion.ciudad, addressRegion: negocio.direccion.estado, addressCountry: "MX" },
+        geo: { "@type": "GeoCoordinates", latitude: negocio.coordenadas.lat, longitude: negocio.coordenadas.lng },
         areaServed: { "@type": "State", name: negocio.direccion.estado },
         openingHoursSpecification: [dias(["Monday","Tuesday","Wednesday","Thursday","Friday"], "08:30", "17:30"), dias(["Saturday"], "08:30", "13:30")],
         sameAs: [negocio.redes.facebook, negocio.redes.instagram],

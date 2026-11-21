@@ -7,12 +7,15 @@ const walk = (d) => fs.readdirSync(path.join(root, d), { withFileTypes: true }).
 
 // 1 Fotos
 const src = ["app/page.tsx", ...walk("components").filter((f) => f.endsWith(".tsx"))].map(read).join("\n");
-for (const m of src.matchAll(/nombre="([a-z0-9-]+)"/g)) {
-  if (!["webp","jpg","jpeg","png"].some((e) => exists(`public/img/${m[1]}.${e}`))) errs.push(`Falta la foto public/img/${m[1]}.(webp|jpg|png)`);
+for (const m of src.matchAll(/nombre="([a-z0-9\/-]+)"/g)) {
+  const r = m[1].includes("/") ? m[1] : `fotos/${m[1]}`;
+  if (!["webp","jpg","jpeg","png"].some((e) => exists(`public/img/${r}.${e}`))) errs.push(`Falta la foto public/img/${r}.(webp|jpg|png)`);
 }
+// 1b Fotos provisionales del catálogo (bajadas de aceroslym.com, con triángulo verde fuera de marca)
+if (exists("public/img/catalogo") && fs.readdirSync(path.join(root, "public/img/catalogo")).length) errs.push("Quedan fotos provisionales en public/img/catalogo/ (reemplazar por fotos propias y borrar la carpeta).");
 // 2 Logo
-if (!["svg","png","webp"].some((e) => exists(`public/img/logo-horizontal.${e}`))) errs.push("Falta public/img/logo-horizontal.(svg|png)");
-if (!["svg","png","webp"].some((e) => exists(`public/img/logo-negativo.${e}`))) errs.push("Falta public/img/logo-negativo.(svg|png)");
+if (!["svg","png","webp"].some((e) => exists(`public/img/logo/logo-horizontal.${e}`))) errs.push("Falta public/img/logo/logo-horizontal.(svg|png)");
+if (!["svg","png","webp"].some((e) => exists(`public/img/logo/logo-negativo.${e}`))) errs.push("Falta public/img/logo/logo-negativo.(svg|png)");
 // 3 Fuentes con licencia (woff2 de licencia web) + confirmación explícita
 for (const f of ["cocogoose-pro-regular.woff2", "coolvetica-regular.woff2"]) if (!exists(`public/fonts/${f}`)) errs.push(`Falta public/fonts/${f} (licencia web de la fuente)`);
 if (process.env.LICENCIA_FUENTES_CONFIRMADA !== "1") errs.push("Falta confirmar licencias de fuentes: ejecuta con LICENCIA_FUENTES_CONFIRMADA=1 solo con comprobante de compra de ambas.");

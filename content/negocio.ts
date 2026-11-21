@@ -5,12 +5,14 @@ export const negocio = {
   lema: "Lámina y Montén",
   desde: 2002,
   direccion: {
-    calle: "Libramiento #482",
-    colonia: "Col. Nuevas Palomas",
-    cp: "63194",
+    calle: "Perif. Libramiento #482",
+    colonia: "Col. El Armadillo",
+    cp: "63792",
     ciudad: "Tepic",
     estado: "Nayarit",
   },
+  // Pin de Google Maps confirmado por Lups (21-nov-2026). Con «Nuevas Palomas» Maps no ubicaba bien; la colonia correcta es El Armadillo.
+  coordenadas: { lat: 21.4661562, lng: -104.856865 },
   telefonos: [
     { etiqueta: "311 218 38 81", tel: "+523112183881" },
     { etiqueta: "311 219 59 15", tel: "+523112195915" },
@@ -30,7 +32,7 @@ export const negocio = {
   },
   // Enlace a la ficha de Google (reseñas). TODO 2.5: sustituir por el enlace corto oficial de la ficha.
   fichaGoogle:
-    "https://www.google.com/maps/search/?api=1&query=Acero%27S+L+y+M+Libramiento+482+Tepic+Nayarit",
+    "https://www.google.com/maps/place/Perif.+Libramiento+482,+El+Armadillo,+63792+Tepic,+Nay./@21.4661562,-104.8594399,17z/data=!3m1!4b1!4m6!3m5!1s0x842730adf7157917:0xe458bb2c61aa807!8m2!3d21.4661562!4d-104.856865",
   calificacion: { valor: "4.5", opiniones: 102 },
   entrega: {
     umbralSinFlete: 2500,

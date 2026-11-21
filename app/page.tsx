@@ -24,18 +24,18 @@ import Carrusel from "@/components/Carrusel";
 import MapaNayarit from "@/components/MapaNayarit";
 import { GraficoTecho, GraficoPTR, GraficoLamina } from "@/components/Graficos";
 
-const dir = "Libramiento 482, Nuevas Palomas, Tepic, Nayarit";
-const mapaSrc = `https://www.google.com/maps?q=${encodeURIComponent(dir)}&output=embed`;
-const comoLlegar = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(dir)}`;
+const pin = `${negocio.coordenadas.lat},${negocio.coordenadas.lng}`;
+const mapaSrc = `https://www.google.com/maps?q=${pin}&z=17&output=embed`;
+const comoLlegar = `https://www.google.com/maps/dir/?api=1&destination=${pin}`;
 const anios = new Date().getFullYear() - negocio.desde;
 const i = (n: number) => ({ "--i": n } as CSSProperties);
 // Fotos de la tarjeta de carrusel: reales del cliente donde hay; el resto son provisionales bajadas de aceroslym.com (reemplazar).
-const foto = { "Láminas y placas": ["lamina-galvanizada", "center"], "Perfiles tubulares": ["ptr-tubular", "center"], "Sólidos": ["prod/solidos", "30% center"], "Lámina perforada": ["prod/lamina-perforada", "15% center"], "Anclaje": ["prod/anclaje", "12% center"], "Ferretería": ["prod/ferreteria", "20% center"], "Herramienta eléctrica": ["prod/herramienta", "10% center"], "Forja y figuras de vaciado": ["prod/forja", "15% center"] } as Record<string, [string, string]>;
+const foto = { "Láminas y placas": ["lamina-galvanizada", "center"], "Perfiles tubulares": ["ptr-tubular", "center"], "Sólidos": ["catalogo/solidos", "30% center"], "Lámina perforada": ["catalogo/lamina-perforada", "15% center"], "Anclaje": ["catalogo/anclaje", "12% center"], "Ferretería": ["catalogo/ferreteria", "20% center"], "Herramienta eléctrica": ["catalogo/herramienta", "10% center"], "Forja y figuras de vaciado": ["catalogo/forja", "15% center"] } as Record<string, [string, string]>;
 const tarjetas: { titulo: string; texto: string; origen: Origen; href: string; foto: string; pos?: string }[] = [
-  ...masMateriales.filter((m) => m.activo).map((m) => ({ titulo: m.titulo, texto: m.texto, origen: m.origen, href: m.enlace.href, foto: foto[m.titulo]?.[0] ?? "prod/solidos", pos: foto[m.titulo]?.[1] })),
+  ...masMateriales.filter((m) => m.activo).map((m) => ({ titulo: m.titulo, texto: m.texto, origen: m.origen, href: m.enlace.href, foto: foto[m.titulo]?.[0] ?? "catalogo/solidos", pos: foto[m.titulo]?.[1] })),
   { titulo: "Celosías y paneles decorativos", texto: "Diseños cortados con plasma CNC a tu medida.", origen: "transformacion", href: catalogo.plasma, foto: "transformacion-2", pos: "center" },
 ];
-const fotosServ = [{ foto: "transformacion-1", pos: "center 40%" }, { foto: "prod/srv-doblez", pos: "center" }, { foto: "transformacion-3", pos: "center" }, { foto: "prod/srv-asesoria", pos: "center" }];
+const fotosServ = [{ foto: "transformacion-1", pos: "center 40%" }, { foto: "catalogo/srv-doblez", pos: "center" }, { foto: "transformacion-3", pos: "center" }, { foto: "catalogo/srv-asesoria", pos: "center" }];
 const cinta = Array.from(new Set(productosActivos.map((p) => p.corto.replace(/ \(.*\)/, ""))));
 
 export default function Home() {
@@ -69,7 +69,7 @@ export default function Home() {
         {/* Cinta de materiales */}
         <div className="cinta" aria-hidden="true">
           <div className="cinta__pista">
-            {[0, 1].flatMap((k) => cinta.map((c) => <span key={`${k}${c}`} className={k ? "dup" : undefined}>{c}</span>))}
+            {[0, 1].flatMap((k) => cinta.map((c) => <span key={`${k}${c}`}>{c}</span>))}
           </div>
         </div>
         <h2 className="sr-only">Materiales: {cinta.join(", ")}</h2>
