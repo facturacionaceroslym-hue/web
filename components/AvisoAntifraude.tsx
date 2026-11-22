@@ -36,6 +36,8 @@ export default function AvisoAntifraude() {
 
   if (!abierto) return null;
   return (
+    <>
+    <div className="aviso-fondo" onClick={cerrar} aria-hidden="true" />
     <aside className="aviso" role="dialog" aria-modal="false" aria-labelledby="aviso-t">
       <button className="aviso__x" onClick={cerrar} aria-label="Cerrar aviso" ref={btn}>×</button>
       <p className="aviso__tag">Aviso importante</p>
@@ -52,5 +54,6 @@ export default function AvisoAntifraude() {
       </div>
       <p className="aviso__legal">Al seguir navegando aceptas nuestro <a href="/privacidad">Aviso de privacidad</a> y los <a href="/terminos">Términos de uso</a>.</p>
     </aside>
+    </>
   );
 }
