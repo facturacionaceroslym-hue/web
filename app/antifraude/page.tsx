@@ -12,10 +12,11 @@ export default function Antifraude() {
         <li>Tienda física: {direccionTexto}.</li>
         <li>Sitio web oficial: {negocio.sitioUrl.replace("https://", "")}.</li>
         <li>Teléfonos: {negocio.telefonos.map((t) => t.etiqueta).join(" y ")} · WhatsApp: {negocio.whatsapp.etiqueta}.</li>
-        <li>Redes sociales oficiales: <a href={negocio.redes.facebook}>Facebook</a> e <a href={negocio.redes.instagram}>Instagram</a>. Verifica siempre la insignia de verificación.</li>
+        <li>Redes sociales oficiales: <a href={negocio.redes.facebook}>Facebook</a> e <a href={negocio.redes.instagram}>Instagram</a>.</li>
+        <li>Correo: {negocio.correo}.</li>
       </ul>
       <h2>Recuerda</h2>
-      <p>Nunca solicitamos pagos por adelantado a cuentas personales ni pedimos información financiera por WhatsApp o redes sociales. Si recibes una comunicación sospechosa, repórtala.</p>
+      <p>Antes de hacer un pago o depósito, o de compartir datos personales o bancarios, confirma por teléfono o por WhatsApp en los números oficiales de arriba que quien te escribe realmente es de {negocio.nombreCorto}. Si recibes una comunicación sospechosa, no respondas ni pagues y avísanos por esos mismos canales.</p>
       <div className="acciones"><BotonWhatsApp origen="antifraude">Confirmar un contacto por WhatsApp</BotonWhatsApp></div>
     </Pagina>
   );

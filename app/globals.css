@@ -352,3 +352,17 @@ p { margin: 0; }
 .cierre-foto { position: absolute; inset: 0; z-index: 0; opacity: .35; }
 .cierre-foto .foto { position: absolute; inset: 0; aspect-ratio: auto; }
 .cierre .wrap { position: relative; z-index: 1; }
+
+/* Aviso antifraude (no bloqueante) */
+.aviso { position: fixed; z-index: 90; left: 12px; right: 12px; bottom: 12px; background: #fff; color: var(--texto); border-top: 4px solid var(--rojo); border-radius: 10px; padding: 22px 22px 18px; box-shadow: 0 24px 60px -12px rgba(5,10,22,.55); animation: aparece .6s var(--ease); max-height: 80svh; overflow: auto; }
+.aviso h2 { font-size: clamp(18px, 4.6vw, 22px); color: var(--azul); margin: 4px 0 10px; padding-right: 28px; }
+.aviso p { font-size: 15.5px; color: var(--texto-suave); }
+.aviso__tag { font-family: var(--titulo); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--rojo) !important; }
+.aviso ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 4px; font-size: 15.5px; }
+.aviso ul a, .aviso__legal a { color: var(--azul); }
+.aviso__bt { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.aviso__bt .btn { min-height: 46px; padding: 0 18px; font-size: 12px; }
+.aviso__legal { margin-top: 14px; font-size: 13px !important; }
+.aviso__x { position: absolute; top: 8px; right: 10px; width: 40px; height: 40px; border: 0; background: none; font-size: 28px; line-height: 1; color: var(--gris); cursor: pointer; }
+@media (min-width: 700px) { .aviso { left: 24px; right: auto; bottom: 24px; width: 420px; } }
+@media (prefers-reduced-motion: reduce) { .aviso { animation: none !important; } }

@@ -11,8 +11,12 @@ export const negocio = {
     ciudad: "Tepic",
     estado: "Nayarit",
   },
-  // Pin de Google Maps confirmado por Lups (21-nov-2026). Con «Nuevas Palomas» Maps no ubicaba bien; la colonia correcta es El Armadillo.
-  coordenadas: { lat: 21.4661562, lng: -104.856865 },
+  // Ficha de Google de la empresa (enlace corto confirmado por Lups, 21-nov-2026). `ftid` identifica la ficha: el mapa y «Cómo llegar» deben usarla, no coordenadas sueltas.
+  mapa: {
+    consulta: "Acero'S L y M, Libramiento 482, El Armadillo, Tepic, Nayarit",
+    ftid: "0x842730b3f9782fbb:0x3f624245eae5862",
+    enlaceCorto: "https://maps.app.goo.gl/MVEauroyYQVgsLGG6",
+  },
   telefonos: [
     { etiqueta: "311 218 38 81", tel: "+523112183881" },
     { etiqueta: "311 219 59 15", tel: "+523112195915" },
@@ -31,8 +35,7 @@ export const negocio = {
     instagram: "https://www.instagram.com/aceroslym",
   },
   // Enlace a la ficha de Google (reseñas). TODO 2.5: sustituir por el enlace corto oficial de la ficha.
-  fichaGoogle:
-    "https://www.google.com/maps/place/Perif.+Libramiento+482,+El+Armadillo,+63792+Tepic,+Nay./@21.4661562,-104.8594399,17z/data=!3m1!4b1!4m6!3m5!1s0x842730adf7157917:0xe458bb2c61aa807!8m2!3d21.4661562!4d-104.856865",
+  fichaGoogle: "https://maps.app.goo.gl/MVEauroyYQVgsLGG6",
   calificacion: { valor: "4.5", opiniones: 102 },
   entrega: {
     umbralSinFlete: 2500,

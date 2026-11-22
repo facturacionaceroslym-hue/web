@@ -1,3 +1,4 @@
+import AvisoAntifraude from "@/components/AvisoAntifraude";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { negocio } from "@/content/negocio";
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a className="skip" href="#contenido">Saltar al contenido</a>
         {children}
+        <AvisoAntifraude />
       </body>
     </html>
   );

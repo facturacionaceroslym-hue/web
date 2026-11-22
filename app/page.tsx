@@ -24,9 +24,9 @@ import Carrusel from "@/components/Carrusel";
 import MapaNayarit from "@/components/MapaNayarit";
 import { GraficoTecho, GraficoPTR, GraficoLamina } from "@/components/Graficos";
 
-const pin = `${negocio.coordenadas.lat},${negocio.coordenadas.lng}`;
-const mapaSrc = `https://www.google.com/maps?q=${pin}&z=17&output=embed`;
-const comoLlegar = `https://www.google.com/maps/dir/?api=1&destination=${pin}`;
+const consulta = encodeURIComponent(negocio.mapa.consulta);
+const mapaSrc = `https://www.google.com/maps?q=${consulta}&ftid=${negocio.mapa.ftid}&z=17&output=embed`;
+const comoLlegar = `https://www.google.com/maps/dir/?api=1&destination=${consulta}`;
 const anios = new Date().getFullYear() - negocio.desde;
 const i = (n: number) => ({ "--i": n } as CSSProperties);
 // Fotos de la tarjeta de carrusel: reales del cliente donde hay; el resto son provisionales bajadas de aceroslym.com (reemplazar).

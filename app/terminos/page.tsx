@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Pagina from "@/components/Pagina";
 import { negocio } from "@/content/negocio";
+import { FECHA_LEGAL } from "@/content/legal";
 export const metadata: Metadata = { title: "Términos de uso", alternates: { canonical: "/terminos" } };
 export default function Terminos() {
   return (
     <Pagina titulo="Términos de uso" legal>
+      <p><em>Última actualización: {FECHA_LEGAL}.</em></p>
       <h2>Información</h2>
       <p>Esta página presenta los productos y servicios de {negocio.nombre}. La información es de carácter informativo y puede cambiar sin previo aviso.</p>
       <h2>Precios y disponibilidad</h2>
@@ -12,7 +14,7 @@ export default function Terminos() {
       <h2>Entrega</h2>
       <p>{negocio.entrega.texto} {negocio.entrega.sinMinimo}</p>
       <h2>Imágenes y marcas</h2>
-      <p>Las imágenes son ilustrativas. Las marcas de terceros mencionadas pertenecen a sus propietarios y se nombran solo para describir productos disponibles.</p>
+      <p>Las imágenes son ilustrativas y pueden estar retocadas; el producto real puede variar en presentación. Las marcas de terceros mencionadas pertenecen a sus propietarios y se nombran solo para describir productos disponibles.</p>
       <h2>Reseñas</h2>
       <p>Las reseñas mostradas provienen de la ficha pública de Google del negocio y pertenecen a sus autores.</p>
       <h2>Ley aplicable</h2>
