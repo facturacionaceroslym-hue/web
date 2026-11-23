@@ -7,7 +7,7 @@ export const negocio = {
   direccion: {
     calle: "Perif. Libramiento #482",
     colonia: "Col. El Armadillo",
-    cp: "63792",
+    cp: "63194",
     ciudad: "Tepic",
     estado: "Nayarit",
   },

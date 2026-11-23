@@ -30,12 +30,12 @@ const comoLlegar = `https://www.google.com/maps/dir/?api=1&destination=${consult
 const anios = new Date().getFullYear() - negocio.desde;
 const i = (n: number) => ({ "--i": n } as CSSProperties);
 // Fotos de la tarjeta de carrusel: reales del cliente donde hay; el resto son provisionales bajadas de aceroslym.com (reemplazar).
-const foto = { "Láminas y placas": ["lamina-galvanizada", "center"], "Perfiles tubulares": ["ptr-tubular", "center"], "Sólidos": ["catalogo/solidos", "30% center"], "Lámina perforada": ["catalogo/lamina-perforada", "15% center"], "Anclaje": ["catalogo/anclaje", "12% center"], "Ferretería": ["catalogo/ferreteria", "20% center"], "Herramienta eléctrica": ["catalogo/herramienta", "10% center"], "Forja y figuras de vaciado": ["catalogo/forja", "15% center"] } as Record<string, [string, string]>;
+const foto = { "Láminas y placas": ["lamina-galvanizada", "center"], "Perfiles tubulares": ["ptr-tubular", "center"], "Sólidos": ["solidos", "30% center"], "Lámina perforada": ["lamina-perforada", "15% center"], "Anclaje": ["anclaje", "12% center"], "Ferretería": ["ferreteria", "20% center"], "Herramienta eléctrica": ["herramienta", "10% center"], "Forja y figuras de vaciado": ["forja", "15% center"] } as Record<string, [string, string]>;
 const tarjetas: { titulo: string; texto: string; origen: Origen; href: string; foto: string; pos?: string }[] = [
-  ...masMateriales.filter((m) => m.activo).map((m) => ({ titulo: m.titulo, texto: m.texto, origen: m.origen, href: m.enlace.href, foto: foto[m.titulo]?.[0] ?? "catalogo/solidos", pos: foto[m.titulo]?.[1] })),
+  ...masMateriales.filter((m) => m.activo).map((m) => ({ titulo: m.titulo, texto: m.texto, origen: m.origen, href: m.enlace.href, foto: foto[m.titulo]?.[0] ?? "solidos", pos: foto[m.titulo]?.[1] })),
   { titulo: "Celosías y paneles decorativos", texto: "Diseños cortados con plasma CNC a tu medida.", origen: "transformacion", href: catalogo.plasma, foto: "transformacion-2", pos: "center" },
 ];
-const fotosServ = [{ foto: "transformacion-1", pos: "center 40%" }, { foto: "catalogo/srv-doblez", pos: "center" }, { foto: "transformacion-3", pos: "center" }, { foto: "catalogo/srv-asesoria", pos: "center" }];
+const fotosServ = [{ foto: "transformacion-1", pos: "center 40%" }, { foto: "srv-doblez", pos: "center" }, { foto: "transformacion-3", pos: "center" }, { foto: "srv-asesoria", pos: "center" }];
 const cinta = Array.from(new Set(productosActivos.map((p) => p.corto.replace(/ \(.*\)/, ""))));
 
 export default function Home() {
